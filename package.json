@@ -12,6 +12,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "sass": "^1.54.5",
+    "use-sound": "^4.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -21,7 +22,6 @@
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{ts,tsx,js,jsx}'",
     "lint:fix": "eslint --fix './src/**/*.{ts,tsx,js,jsx}'"
-
   },
   "eslintConfig": {
     "extends": [
