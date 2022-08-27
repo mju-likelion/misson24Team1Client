@@ -1,0 +1,150 @@
+$color: invert(#dff6ff);
+
+.trainPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 300px;
+  background-color: invert($color);
+
+  .rails {
+    position: absolute;
+    width: 80px;
+    margin-top: 101px;
+    margin-left: 10px;
+    text-align: center;
+
+    &::before,
+    &::after {
+      display: block;
+      float: left;
+      width: 3px;
+      height: 40px;
+      content: '';
+      background-color: $color;
+      border-radius: 4px;
+      transform: skewX(-27deg);
+      transform-origin: bottom;
+    }
+
+    &::after {
+      float: right;
+      transform: skewX(27deg);
+    }
+  }
+
+  .ties {
+    position: absolute;
+    top: 89%;
+    display: inline-block;
+    height: 3px;
+    background-color: $color;
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateX(-52%);
+    animation: track 1s infinite linear;
+  }
+
+  .ties:nth-child(2) {
+    animation-delay: -0.333s;
+  }
+
+  .ties:nth-child(3) {
+    animation-delay: -0.666s;
+  }
+
+  .train {
+    position: relative;
+    top: 1px;
+    width: 60px;
+    height: 60px;
+    margin-left: 8.5px;
+    background-color: $color;
+    border-radius: 10px;
+    animation: train 1.5s infinite ease-in-out;
+  }
+
+  .windows {
+    position: relative;
+    top: 12px;
+    width: 80%;
+    height: 23px;
+    margin: 1px auto 0;
+    background-color: invert($color);
+    border-radius: 4px;
+
+    &::before {
+      position: absolute;
+      top: -8px;
+      left: calc(50% - 7.5px);
+      display: block;
+      width: 15px;
+      height: 5px;
+      content: '';
+      background-color: invert($color);
+      border-radius: 3px;
+    }
+  }
+
+  .lights::before,
+  .lights::after {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: '';
+    background-color: invert($color);
+    border-radius: 50%;
+  }
+
+  .lights::after {
+    left: 71%;
+  }
+
+  @keyframes train {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    25% {
+      transform: rotate(0.5deg);
+    }
+
+    50% {
+      transform: rotate(-0.5deg);
+    }
+
+    75% {
+      transform: rotate(0.5deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes track {
+    0% {
+      top: 88%;
+      width: 90%;
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      top: 0;
+      width: 38px;
+      opacity: 0;
+    }
+  }
+}
