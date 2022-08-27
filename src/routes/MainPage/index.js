@@ -29,19 +29,34 @@ const MainPage = () => {
     }
 
     const sendRequest = async () => {
-        console.log(startPoint)
-        try {
-            const req = await axios.post('http://52.79.165.184/subway', {
-                departure: startPoint
-            });
-            console.log('성공', req.data[0])
-            setUpperTitle(req.data[1].subway_subwayename)
-            setUpperTime(req.data[1].subway_lefttime)
-            setLowerTitle(req.data[0].subway_subwayename)
-            setLowerTime(req.data[0].subway_lefttime)
-            return req.data;
-        } catch (e) {
-            console.log('실패', e)
+        if (isChange === true) {
+            try {
+                const req = await axios.post('http://52.79.165.184/subway', {
+                    departure: startPoint
+                });
+                console.log('성공', req.data[0])
+                setUpperTitle(req.data[1].subway_subwayename)
+                setUpperTime(req.data[1].subway_lefttime)
+                setLowerTitle(req.data[0].subway_subwayename)
+                setLowerTime(req.data[0].subway_lefttime)
+                return req.data;
+            } catch (e) {
+                console.log('실패', e)
+            }
+        } else if (isChange === false) {
+            try {
+                const req = await axios.post('http://52.79.165.184/subway', {
+                    departure: endPoint
+                });
+                console.log('성공', req.data[0])
+                setUpperTitle(req.data[1].subway_subwayename)
+                setUpperTime(req.data[1].subway_lefttime)
+                setLowerTitle(req.data[0].subway_subwayename)
+                setLowerTime(req.data[0].subway_lefttime)
+                return req.data;
+            } catch (e) {
+                console.log('실패', e)
+            }
         }
     }
 
@@ -81,7 +96,7 @@ const MainPage = () => {
                         <div className={styles.upperTime}>{upperTime}</div>
                     </div>
                     <div className={styles.lowerDiv}>하행선
-                    <div className={styles.lowerTitle}>{lowerTitle}</div>
+                        <div className={styles.lowerTitle}>{lowerTitle}</div>
                         <div className={styles.lowerTime}>{lowerTime}</div></div>
                 </div>
                 <Slide />
