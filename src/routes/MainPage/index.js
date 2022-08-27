@@ -1,6 +1,6 @@
 import { React } from 'react';
 
-import { ReactComponent as ChangeButton } from '../../assets/svgs/';
+import { ChangeButton } from '../../assets/svgs';
 import styles from './mainPage.module.scss';
 
 const MainPage = () => (
