@@ -8,7 +8,7 @@ const App = () => {
 
     useEffect(() => {
         setTimeout(() => { setIsLoading(false) }, 2000);
-    });
+    }, [isLoading]);
 
     return (< div className="App" >
         {isLoading ? <LoadingPage /> : <MainPage />}
