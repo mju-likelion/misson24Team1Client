@@ -3,16 +3,37 @@
   width: 375px;
   height: 100%;
   margin: 0 auto;
+    font-family: 'LotteMartHappy',
+    sans-serif;
 
   .header {
-    height: 92px;
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 92px;
-    text-align: center;
-    letter-spacing: 1.2px;
     background-color: #06113C;
-    color: #fff;
+    text-align: center;
+    height: 92px;
+    padding-top: 5px;
+  }
+
+  .title {
+    font-size: 28px;
+    color: #FFF;
+    letter-spacing: 1.2px;
+  }
+
+  // .header {
+  //   height: 92px;
+  //   font-size: 32px;
+  //   font-weight: 600;
+  //   // line-height: 92px;
+  //   line-height: 150px;
+  //   text-align: center;
+  //   letter-spacing: 1.2px;
+  //   background-color: #06113C;
+  //   color: #fff;
+  // }
+  
+  .Logo {
+    width: 50px;
+    height: 50px;
   }
 
   .body {
@@ -41,6 +62,7 @@
         border-width: 1px;
         border-radius: 5px;
         box-shadow: 4px 4px 4px 0 #ff8c32;
+        padding-left: 10px;
       }
 
       svg {
@@ -72,12 +94,30 @@
       border-radius: 10px;
     }
 
-    .infoDiv {
-      width: 312px;
-      height: 215px;
-      margin: 0 auto;
-      margin-top: 53px;
-      background-color: #d9d9d9;
-    }
+    // .infoDiv {
+    //   width: 312px;
+    //   height: 215px;
+    //   margin: 0 auto;
+    //   margin-top: 53px;
+    //   background-color: #d9d9d9;
+    // }
   }
+}
+
+@font-face {
+  font-family: 'LotteMartHappy';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'LotteMartHappy';
+  font-style: normal;
+  font-weight: 700;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyBold.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyBold.woff') format('woff');
+}
+
+.lottemarthappy * {
+  font-family: 'LotteMartHappy', sans-serif;
 }
