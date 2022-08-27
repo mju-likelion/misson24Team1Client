@@ -9,6 +9,10 @@ import styles from './mainPage.module.scss';
 
 const MainPage = () => {
     const [isChange, setIsChange] = useState(true);
+    const [upperTitle, setUpperTitle] = useState('');
+    const [upperTime, setUpperTime] = useState('');
+    const [lowerTitle, setLowerTitle] = useState('');
+    const [lowerTime, setLowerTime] = useState('');
     const [startPoint, setStartPoint] = useState('');
     const [endPoint, setEndPoint] = useState('');
 
@@ -27,10 +31,14 @@ const MainPage = () => {
     const sendRequest = async () => {
         console.log(startPoint)
         try {
-            const req = await axios.get('http://52.79.165.184/subway', {
+            const req = await axios.post('http://52.79.165.184/subway', {
                 departure: startPoint
             });
-            console.log('성공', req.data)
+            console.log('성공', req.data[0])
+            setUpperTitle(req.data[1].subway_subwayename)
+            setUpperTime(req.data[1].subway_lefttime)
+            setLowerTitle(req.data[0].subway_subwayename)
+            setLowerTime(req.data[0].subway_lefttime)
             return req.data;
         } catch (e) {
             console.log('실패', e)
@@ -67,7 +75,15 @@ const MainPage = () => {
                 <button className={styles.lookUpButton} type="button" onClick={sendRequest}>
                     조회하기
                 </button>
-                {/* <div className={styles.infoDiv}>정보</div> */}
+                <div className={styles.resultDiv}>
+                    <div className={styles.upperDiv}>상행선
+                        <div className={styles.upperTitle}>{upperTitle}</div>
+                        <div className={styles.upperTime}>{upperTime}</div>
+                    </div>
+                    <div className={styles.lowerDiv}>하행선
+                    <div className={styles.lowerTitle}>{lowerTitle}</div>
+                        <div className={styles.lowerTime}>{lowerTime}</div></div>
+                </div>
                 <Slide />
             </div>
         </div>
