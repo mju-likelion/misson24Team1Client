@@ -1,5 +1,7 @@
-const MainPage = () => (<div>
-    <div>메인페이지</div>
+import styles from './mainPage.module.scss'
+
+const MainPage = () => (<div className={styles.wrapper}>
+    <h1 className={styles.header}>지금출발해</h1>
 </div>)
 
-export default MainPage;
+export default MainPage
