@@ -1,4 +1,4 @@
-import { React } from 'react';
+import SemiCircleProgressBar from 'react-progressbar-semicircle';
 
 import { ChangeButton } from '../../assets/svgs';
 import styles from './mainPage.module.scss';
@@ -7,7 +7,9 @@ const MainPage = () => (
   <div className={styles.wrapper}>
     <h1 className={styles.header}>지금출발해</h1>
     <div className={styles.body}>
-      <div className={styles.progressBar}>프로그레스바 자리</div>
+      <div className={styles.progressBar}>
+        <SemiCircleProgressBar percentage={33} showPercentValue stroke="orange" />
+      </div>
       <div className={styles.inputForm}>
         <div>
           <input placeholder="출발역" />
