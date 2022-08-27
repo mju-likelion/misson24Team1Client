@@ -8,7 +8,7 @@ const MainPage = () => (
     <h1 className={styles.header}>지금출발해</h1>
     <div className={styles.body}>
       <div className={styles.progressBar}>
-        <SemiCircleProgressBar percentage={33} showPercentValue />
+        <SemiCircleProgressBar percentage={33} showPercentValue stroke="orange" />
       </div>
       <div className={styles.inputForm}>
         <div>
