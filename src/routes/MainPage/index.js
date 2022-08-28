@@ -35,7 +35,7 @@ const MainPage = () => (
       <button className={styles.lookUpButton} type="button">
         조회하기
       </button>
-      {/* <div className={styles.infoDiv}>정보</div> */}
+      <div className={styles.infoDiv}>정보</div>
       <Slide />
     </div>
   </div>
