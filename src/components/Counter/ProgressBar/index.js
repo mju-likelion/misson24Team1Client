@@ -1,3 +1,3 @@
-const ProgerssBar = () => {};
+const ProgressBar = () => {};
 
 export default ProgressBar;
